@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Alliance 1-20
+#version 1
 << Alliance !Warlock !Hunter
+#defaultfor Gnome/Dwarf
 #name 1-11 Dun Morogh
 #next 11-14 Darkshore
 step << !Gnome !Dwarf
@@ -1282,7 +1285,7 @@ step << Rogue
 step << Rogue
     .accept 6661 >> Accept Deeprun Rat Roundup
 step << Rogue
-    >>Use your flute on the rats scattered around
+    .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step << Rogue
     .turnin 6661 >> Turn in Deeprun Rat Roundup
@@ -2004,7 +2007,7 @@ step
 step
     .accept 6661 >> Accept Deeprun Rat Roundup
 step 
-    >>Use your flute on the rats scattered around
+    .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
 .turnin 6661 >> Turn in Deeprun Rat Roundup
@@ -3193,7 +3196,7 @@ step
 step
     .accept 6661 >> Accept Deeprun Rat Roundup
 step
-    >>Use your flute on the rats scattered around
+    .use 17117>>Use your flute on the rats scattered around
     .complete 6661,1 --Rats Captured (x5)
 step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
@@ -3205,11 +3208,4 @@ step
 step
     .goto Wetlands,4.6,57.2
     .zone Darkshore >> Take the boat to Darkshore. Make bandages or sharpening stones while you wait.
-]],"Dwarf Hunter")
-
-
-
-
-
-
-
+]])
