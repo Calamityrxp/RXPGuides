@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
+#defaultfor BloodElf
 #name 1-6 Eversong Woods
 #next 6-10 Eversong Woods
 step << !BloodElf
