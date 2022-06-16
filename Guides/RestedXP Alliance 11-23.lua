@@ -1,4 +1,6 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Alliance 1-20
+#version 1
 << Alliance !Warlock
 #name 11-14 Darkshore
 #next 14-20 Bloodmyst
