@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
+#defaultfor Orc/Troll
 #name 1-10 Durotar
 #next 10-13 Durotar << Warrior/Shaman
 #next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
@@ -1079,7 +1082,9 @@ step << Paladin
     .goto Silvermoon City,91.2,36.9
     .trainer >> Go and train your class spells
 ]],"Orc/Troll")
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
 #name 10-13 Durotar
 #next 13-23 The Barrens
