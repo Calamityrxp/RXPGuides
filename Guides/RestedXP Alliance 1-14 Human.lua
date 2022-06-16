@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Alliance 1-20
+#version 1
 << Alliance
+#defaultfor Human
 #name 1-11 Elwynn Forest
 #next 12-14 Loch Modan << Warlock
 #next 11-12 Loch Modan << !Warlock
@@ -1518,4 +1521,4 @@ step
     #label Azuremyst
     .zone Azuremyst Isle >>Get onto the boat when it comes. 
     >> Level first aid or make weapon stones while waiting. << Warrior/Rogue/Paladin
-]],"Human Warlock")
+]])
