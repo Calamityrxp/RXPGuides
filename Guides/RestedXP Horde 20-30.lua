@@ -1,4 +1,6 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde !Warrior !Shaman
 #name 20-23 Stonetalon / The Barrens
 #next 23-27 Hillsbrad / Ashenvale
