@@ -1,4 +1,6 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
 #name 1-10 Durotar
 #next 10-13 Durotar << Warrior/Shaman
@@ -1473,4 +1475,4 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
-]],"Warrior !Tauren/Shaman !Tauren")
+]])
