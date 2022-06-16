@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Alliance 1-20
+#version 1
 << Alliance
+#defaultfor Draenei
 #name 1-12 Azuremyst Isle
 #next 11-20 Bloodmyst (Draenei)
 step
@@ -410,7 +413,7 @@ step
 step
     .goto Azuremyst Isle,61.0,54.2
     >>Follow the furbolg spirit and wait until you get the swim speed buff before entering the water
-    >>Use the fish net on the fish pools along the river, if a murloc spawns from the pool, run away
+    .use 23654>>Use the fish net on the fish pools along the river, if a murloc spawns from the pool, run away
     .complete 9452,1 --Collect Red Snapper (x10)
 	>>Avoid fighting mobs, you'll lose the swim speed if you do any hostile action
 step
@@ -750,7 +753,7 @@ step << Shaman
     .complete 9467,1 --Collect Hauteur's Ashes (x1)
 step << Shaman
     .goto Azuremyst Isle,59.5,18.0
-    >>Use the orb in your bag to teleport back to the Emberglade
+    .use 24335>>Use the orb in your bag to teleport back to the Emberglade
     .turnin 9467 >> Turn in Call of Fire
     .accept 9468 >> Accept Call of Fire
 step
@@ -2065,5 +2068,5 @@ step << !Hunter
     .fly Auberdine >>Fly back to Auberdine
 step
     .goto Darkshore,32.4,43.8,30 >> Take the boat to Wetlands
-]],"Draenei")
+]])
 
