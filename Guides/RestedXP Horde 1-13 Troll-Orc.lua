@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
+#default for Orc/Troll
 #name 1-10 Durotar
 #next 10-13 Durotar << Warrior/Shaman
 #next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
@@ -1079,7 +1082,9 @@ step << Paladin
     .goto Silvermoon City,91.2,36.9
     .trainer >> Go and train your class spells
 ]],"Orc/Troll")
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
 #name 10-13 Durotar
 #next 13-23 The Barrens
@@ -1473,4 +1478,4 @@ step << Warrior
     .goto The Barrens,61.4,21.1
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
-]],"Warrior !Tauren/Shaman !Tauren")
+]])
