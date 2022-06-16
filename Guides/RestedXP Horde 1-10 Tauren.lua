@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde 
+#defaultfor Tauren
 #name 1-10 Mulgore
 #next 10-20 Eversong Woods / Ghostlands << !Warrior !Shaman
 #next 10-13 Mulgore << Warrior/Shaman
@@ -1032,6 +1035,4 @@ step << Warrior
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
 
-]],"Tauren")
-
-
+]])
