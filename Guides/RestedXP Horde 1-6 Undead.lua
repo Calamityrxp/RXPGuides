@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
+#defaultfor Scourge
 #name 1-6 Tirisfal Glades
 #next 6-10 Eversong Woods
 step << !Scourge
@@ -307,6 +310,6 @@ step
     .accept 8475 >> Accept The Dead Scar
 step
     .goto Eversong Woods,46.5,49.2,30 >>Run to Falconwing Square
-]],"Scourge")
+]])
 
 
