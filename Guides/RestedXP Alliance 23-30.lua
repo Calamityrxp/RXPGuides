@@ -1,4 +1,6 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 20-32",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Alliance 20-32
+#version 1
 << Alliance
 #name 23-24 Wetlands
 #next 24-27 Redridge/Duskwood
