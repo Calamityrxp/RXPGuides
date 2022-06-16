@@ -1,6 +1,9 @@
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
-<< Horde
-#name 1-6 Eversong Woods
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
+<< Horde !Warrior !Shaman
+#defaultfor BloodElf
+#name 1-6 Eversong Woods 
 #next 6-10 Eversong Woods
 step << !BloodElf
     #sticky
@@ -923,7 +926,9 @@ step << Warrior
     >>Run to Razor Hill
 .goto Durotar,52.6,42.8,200
 ]],"BloodElf/Scourge")
-RXPGuides.RegisterGuide("RestedXP Horde 1-30",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Horde 1-30
+#version 1
 << Horde
 #name 10-20 Eversong Woods / Ghostlands
 #next 20-23 Stonetalon / The Barrens
@@ -2634,4 +2639,4 @@ step
 .goto Tirisfal Glades,60.7,58.8,15,0
 step
 .zone Durotar >>Arrive in Durotar
-]],"!Warrior !Shaman")
+]])
