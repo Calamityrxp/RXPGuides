@@ -1,5 +1,8 @@
-RXPGuides.RegisterGuide("RestedXP Alliance 1-20",[[
+RXPGuides.RegisterGuide([[
+#group RestedXP Alliance 1-20
+#version 1
 << Alliance
+#defaultfor NightElf
 #name 1-6 Shadowglen
 #next 6-11 Teldrassil
 step << !NightElf
@@ -740,4 +743,4 @@ step
 step
     .goto Teldrassil,58.4,94.0
     .fly Darkshore >> Fly to Darkshore
-]],"NightElf")
+]])
