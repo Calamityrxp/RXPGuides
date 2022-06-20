@@ -1243,6 +1243,7 @@ step << Warlock/Mage/Rogue
     .goto Loch Modan,24.1,18.2
     .vendor >>vendor and repair
 step << Warlock/Mage/Rogue
+    #label Thelsamar2
     .goto Loch Modan,24.7,18.3
     .turnin 307 >> Turn in Filthy Paws
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
