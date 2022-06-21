@@ -24,12 +24,12 @@ step << Warlock
 .accept 1485 >>Accept Vile Familiars
 step << Warrior/Shaman
     #sticky
-#completewith next
-+Kill Boars for 10c+ of vendor trash
-.goto Durotar,44.2,65.9,30,0
+    #completewith next
+    +Kill Boars for 10c+ of vendor trash, it's worth it to get your level 1 spell.
+    .goto Durotar,44.2,65.9,30,0
 step << Warrior/Shaman
-.goto Durotar,42.6,67.3
-.vendor >> vendor trash. Vendor armor if less than 10c
+    .goto Durotar,42.6,67.3
+    .vendor >> vendor trash. Vendor armor if less than 10c
 step << Warrior
     .goto Durotar,42.9,69.4
     .train 6673 >>Train Battle Shout
@@ -250,49 +250,51 @@ step
     #sticky
     #completewith imps
 .goto Durotar,47.4,65.7,0,0
->>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
+    .use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step << !Warlock
 #sticky
     #completewith imps
-.goto Durotar,47.1,65.2,30,0
->>Kill Scorpions for some tails en route to the cave
-.complete 789,1 --Scorpid Worker Tail (10)
+    .goto Durotar,47.1,65.2,30,0
+    >>Kill Scorpions for some tails en route to the cave
+    .complete 789,1 --Scorpid Worker Tail (10)
 step << Warlock
     >>Kill Scorpions for their tails
-.complete 789,1 --Scorpid Worker Tail (10)
-.goto Durotar,47.1,65.2,30,0
-.goto Durotar,46.6,58.2,30,0
-.goto Durotar,39.8,63.5
+    .complete 789,1 --Scorpid Worker Tail (10)
+    .goto Durotar,47.1,65.2,30,0
+    .goto Durotar,46.6,58.2,30,0
+    .goto Durotar,39.8,63.5
 step << !Warlock
     #label imps
 .goto Durotar,45.2,56.8
     >>Kill Imps in front of the cave
     .complete 792,1 --Vile Familiar (12)
 step <<!Warlock
->>Finish off the Scorpion Tails
-.goto Durotar,39.8,63.5
+    >>Finish off the Scorpion Tails
+    .goto Durotar,39.8,63.5
     .complete 789,1 --Scorpid Worker Tail (10)
 step
     #sticky
     #label cactusapples
+    #completewith appledone
     .goto Durotar,44.0,65.3,0,0
     >>Loot Cactuses that you see with apples on them
     .complete 4402,1 --Cactus Apple (10)
 step
-.goto Durotar,47.4,65.7
->>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
+    .goto Durotar,47.4,65.7
+    .use 16114 >>Wake up any sleeping Peons around the trees with Foreman's Blackjack (put it on your bars to make using it easier)
     .complete 5441,1 --Peons Awoken (5)
 step
+    #label appledone
     #requires cactusapples
     .goto Durotar,42.7,67.2
     .turnin 4402 >>Turn in Galgar's Cactus Apple Surprise
 step << Warrior/Rogue/Hunter/Druid/Paladin/Shaman
     .goto Durotar,42.6,67.3
-.vendor >>vendor trash
+    .vendor >>vendor trash
 step << Mage/Priest/Warlock
     .goto Durotar,42.6,67.3
-.vendor >>vendor trash. Buy 10 water
+    .vendor >>vendor trash. Buy 10 water
 step
     .goto Durotar,42.1,68.3
     .turnin 789 >>Turn in Sting of the Scorpid
@@ -365,7 +367,7 @@ step
     .turnin 6394 >>Turn in Thazz'ril's Pick
 step
     .goto Durotar,42.6,67.3
-.vendor >>vendor trash
+    .vendor >>vendor trash
 step
     >>Save the healing potion you get as you may need it later for the centaurs
 .goto Durotar,42.8,69.1
@@ -403,7 +405,7 @@ step << Warlock
     .train 1454 >>Train Life Tap
 step << Warlock
     .money <0.0095
-.goto Durotar,40.6,68.4
+    .goto Durotar,40.6,68.4
     .vendor >>Buy the Blood Pact book and use it
 step << Shaman
     .goto Durotar,43.0,71.2,20 >>Run up the Hidden Path
@@ -414,8 +416,8 @@ step << Shaman
 step << Shaman
     .goto Durotar,41.8,74.8,10 >>Run up the Hidden Path
 step << Shaman
-    >>Use the Earth Sapta in your bags
-.goto Durotar,44.0,76.2
+    .use 6635 >>Use the Earth Sapta in your bags
+    .goto Durotar,44.0,76.2
     .turnin 1517 >>Turn in Call of Earth
     .accept 1518 >>Accept Call of Earth
 step << Shaman
@@ -431,6 +433,7 @@ step
 .goto Durotar,54.5,75.0,15,0
 .goto Durotar,54.1,76.6,15,0
 >>Quest giver patrols between 3 points
+    .unitscan Lar Prowltusk
     .accept 786 >>Accept Thwarting Kolkar Aggression
 step
     .goto Durotar,56.0,73.9
@@ -441,6 +444,8 @@ step
 step
     .goto Durotar,55.9,74.7
     .turnin 805 >>Turn in Report to Sen'jin Village
+step
+    .goto Durotar,55.9,74.7
     .accept 808 >>Accept Minshina's Skull
     .accept 826 >>Accept Zalazane
     .accept 823 >>Accept Report to Orgnil
@@ -499,7 +504,8 @@ step
 step
     #sticky
     #completewith Bonfire
-    +If the rare is up, kill it when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
+    +If Warlord Kolkanis is up and blocking a plan, kill him when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
+    .unitscan Warlord Kolkanis
 step
     >>On the ground inside the tent.
 .goto Durotar,49.8,81.2
@@ -512,7 +518,7 @@ step
 .goto Durotar,46.3,79.0
     .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 step
-    .goto Durotar,57.5,73.3,200 >> Die at the Bonfire and respawn at the Spirit Healer, or run back
+    .goto Durotar,57.5,73.3,200 >> Die and respawn at the Spirit Healer, or run back
 step << Shaman
     .goto Durotar,56.6,73.1
     .money <0.0480
@@ -543,16 +549,16 @@ step << Hunter
     >> Buy a Hornwood Recurve Bow and equip it
     .collect 2506,1 --Collect Hornwood Recurve Bow
 step
-.goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill
+.goto Durotar,52.5,44.4,100 >>Grind mobs to Razor Hill. We'll come back and turn in quests at Sen'jin later.
 step
->>Inside the bunker, top floor
-.goto Durotar,51.9,43.5
-.accept 784 >>Accept Vanquish the Betrayers
+    >>Inside the bunker, top floor
+    .goto Durotar,51.9,43.5
+    .accept 784 >>Accept Vanquish the Betrayers
 step
-.goto Durotar,51.1,42.6
-.vendor >>Vendor trash
+    .goto Durotar,51.1,42.6
+    .vendor >>Vendor trash
 step
-.goto Durotar,50.2,43.1,10 >>Go up this path here
+    .goto Durotar,50.2,43.1,10 >>Go up this path here
 step
     >>Go up the tower
 .goto Durotar,49.9,40.3
@@ -764,8 +770,8 @@ step
     #label Tools
 >>Check the boat closest to the shore for the Toolboxes. Check other boats if you can't find these spawns. They can be a bit hard to see
 .goto Durotar,61.9,55.5,10 >> In the window underwater
-    .goto Durotar,62.3,56.3,10 >> Underwater
-    .goto Durotar,61.4,56.1,10 >> Near the shore
+    .goto Durotar,62.3,56.3,10 >> Underwater behind the boat
+    .goto Durotar,61.4,56.1,10 >> One more near the shore
     .complete 825,1 --Gnomish Tools (3)
 step
     .goto Durotar,67.2,70.0,90 >>Swim to the Island
@@ -855,6 +861,9 @@ step
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
 step
     .goto Durotar,48.9,48.5
+    .hs >> Hearth back to Razor Hill
+step
+    .goto Durotar,48.9,48.5
     >>Kill Quilboars and Scouts in the area
     .complete 837,1 --Razormane Quilboar (4)
     .complete 837,2 --Razormane Scout (4)
@@ -864,7 +873,8 @@ step
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
 step
-.xp 9+4475 >>Grind to 4475+/6500xp
+    .goto Durotar,43.8,39.1
+.xp 9+5175 >>Grind to 5175+/6500xp
 step
 .goto Durotar,51.1,42.4
     .turnin 815 >>Turn in Break a Few Eggs
@@ -873,6 +883,7 @@ step
     .turnin 825 >>Turn in From The Wreckage....
     .turnin 837 >>Turn in Encroachment
 step
+    .goto Durotar,43.8,39.1
     .xp 10 >>Grind to 10
 step << Paladin
     #sticky
@@ -1198,6 +1209,10 @@ step << !Tauren
 step << !Tauren
     .goto The Barrens,52.2,31.8
     .accept 870 >>Accept The Forgotten Pools
+step << !Tauren\
+    #completewith next
+    .goto The Barrens,52.3,32.0
+    .vendor >> Purchase as many 6 slot bags as you need
 step << !Tauren
     .goto The Barrens,52.2,31.0
     .turnin 842 >>Turn in Crossroads Conscription
@@ -1222,21 +1237,21 @@ step << Orc/Troll
     .accept 6384 >>Accept Ride to Orgrimmar
 step << !Tauren
 .goto The Barrens,51.5,30.1
-    .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
+        .accept 848 >>Accept Fungal Spores
 step << !Tauren
     #sticky
     #completewith next
-    >>Collect the white mushrooms around The Forgotten Pools
-.complete 848,1 --Collect Fungal Spores (x4)
+    >>Collect the white mushrooms around The Forgotten Pools. Try to avoid mobs the best you can.
+    .complete 848,1 --Collect Fungal Spores (x4)
 step << !Tauren
->>Dive underwater to the bubble fissure
-.goto The Barrens,45.1,22.5
+    >>Dive underwater to the bubble fissure
+    .goto The Barrens,45.1,22.5
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step << !Tauren
->>Collect the white mushrooms around The Forgotten Pools
-.goto The Barrens,45.2,23.3,40,0
-.goto The Barrens,45.2,22.0,40,0
+    >>Collect the white mushrooms around The Forgotten Pools. Try to avoid mobs the best you can.
+    .goto The Barrens,45.2,23.3,40,0
+    .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
 .complete 848,1 --Collect Fungal Spores (x4)
@@ -1245,6 +1260,7 @@ step << !Tauren
 step << !Tauren
     .goto The Barrens,51.5,30.1
     .turnin 848 >>Turn in Fungal Spores
+    >> Wait for the roleplay to finish, it takes a couple of seconds. Apothecary Zamah is a TIMED QUEST, if you have to afk at any point before you turn it in, log off. 
     .accept 853 >>Accept Apothecary Zamah
 step << !Tauren
     .goto The Barrens,52.2,31.8
@@ -1255,13 +1271,16 @@ step << !Tauren
 .goto The Barrens,44.4,59.2
     .fp Taurajo>>Get the Camp Taurajo Flight Path
 step << !Tauren
-    .goto Mulgore,58.4,61.7
+    .line Mulgore,69.0,60.0,58.4,61.7,51.9,59.3
+    >> The quest giver patrols along the entire road
+    .unitscan Morin Cloudstalker
     .accept 749 >>Accept The Ravaged Caravan
 step << !Tauren
     .goto Mulgore,48.2,53.4
     .accept 11129 >>Accept Kyle's Gone Missing!
 step << !Tauren
     .goto Mulgore,53.7,48.1
+    >> Cross the lake then loot the chest in the middle of the caravan
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step << !Tauren
@@ -1269,14 +1288,13 @@ step << !Tauren
     >>Kill a plainstrider for Tender Strider Meat
     .collect 33009,1 --Collect Tender Strider Meat (1)
 step << !Tauren
-    .goto Mulgore,58.4,61.7
+    .line Mulgore,51.9,59.3,58.4,61.7,69.0,60.0
+    .unitscan Morin Cloudstalker
     .turnin 751 >>Turn in The Ravaged Caravan
 step << !Tauren
-    .goto Mulgore,47.3,56.9,30,0
-    .goto Mulgore,49.4,63.9,30,0
-    .goto Mulgore,50.2,60.2,30,0
-    .goto Mulgore,46.8,59.6,30,0
-    >>"Fine" Kyle the Frenzied. He patrols clockwise throughout the town (so go counter-clockwise). Go up to him and use the Tender Strider Meat
+    .line Mulgore,47.3,56.9,49.4,63.9,50.2,60.2,46.8,59.6
+    .use 33009 >>Find Kyle the Frenzied. He patrols clockwise throughout the town (so go counter-clockwise). Go up to him and use the Tender Strider Meat
+    .unitscan Kyle the Frenzied
 .complete 11129,1 --Kyle Fed (1)
 step << !Tauren
     .goto Mulgore,48.3,53.3
@@ -1328,10 +1346,12 @@ step << Orc/Troll
     .accept 6385 >>Accept Doras the Wind Rider Master
 step << Orc/Troll
     .goto Orgrimmar,45.2,64.0
+    >> Turn in the quests but do NOT fly back to the crossroads
     .turnin 6385 >>Turn in Doras the Wind Rider Master
     .accept 6386 >>Accept Return to the Crossroads.
 step << Orc/Troll
     .goto Orgrimmar,34.3,36.4
+    >> Cross the bridge from the flightpath tower
     .turnin 831 >>Turn in The Admiral's Orders
 step
     .goto Orgrimmar,31.9,37.7
@@ -1341,31 +1361,32 @@ step << Paladin
     .trainer >> Go and train your class spells
 step
     .goto Orgrimmar,47.2,53.4
+    >> Head into the Cleft of Shadow
     .accept 813 >>Accept Finding the Antidote
 step
-    #sticky
     #completewith next
-+Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it
-step
+    >> Abandon Need for a Cure. This will remove the timer on the quest, but still allow you to still do it
     .abandon 812 >>Abandon Need for a Cure
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run out of Orgrimmar
 step
 .goto Durotar,41.7,25.5,20 >>Jump into Thunder Ridge
 step
-    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space
+    >>Kill Fizzle and loot him for his Claw. Try to clear the mobs in the surrounding camps to make space. 
 .goto Durotar,41.9,26.0
     .complete 806,1 --Fizzle's Claw (1)
 step << !Warrior
 .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     #sticky
+    #completewith next
 .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     >>Kill Lightning Hides for Singed Scales
     .complete 1498,1 --Singed Scale (5)
 step
->>Start killing crocodiles for the Amulet
+    >>Start killing crocodiles for the Amulet
+    *Go south down the coast as you kill, we're doing your totem quest next << Shaman
     .goto Durotar,35.2,27.5,60,0
     .goto Durotar,35.7,57.8,60,0
     .complete 816,1 --Kron's Amulet (1)
@@ -1397,10 +1418,12 @@ step << Warrior
     .train 5242 >>Train Battle Shout r2
     .train 7384 >>Train Overpower
 step << !Warrior
+    #completewith next
     .goto Durotar,54.4,42.2
 .vendor >>Buy 6 slot bags from Jark until you can't equip new bags
 step
     .goto Durotar,56.4,20.1
+    >> Go around the harpy canyon
     .turnin 828 >>Turn in Margoz
     .accept 827 >>Accept Skull Rock
 step
@@ -1414,7 +1437,8 @@ step
     .complete 827,1 --Searing Collar (6)
     .complete 5726,1 --Lieutenant's Insignia (1)
 step << Orc Shaman/Troll Shaman/Orc Warrior/Troll Shaman
-    >>Kill Gazz'uz for Eye of Burning Shadow. He can be in multiple areas of the cave. Use the Faintly Glowing Skull you saved from earlier, sticky glue on the voidwalker to reduce your damage taken, and Healing Potions to restore health. Use LoS (line of sight) to avoid his shadowbolts. Don't be afraid to die if it means killing and looting Gazz'uz
+    >>Kill Gazz'uz for Eye of Burning Shadow. This is a very tough enemy. He can be in multiple areas of the cave. Use the Faintly Glowing Skull you saved from earlier, sticky glue on the voidwalker to reduce your damage taken, and Healing Potions to restore health. Use LoS (line of sight) to avoid his shadowbolts. Don't be afraid to die if it means killing and looting Gazz'uz
+    .goto Durotar,54.8,9.3,30,0
 .goto Durotar,51.8,10.0
 .collect 4903,1,832 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
@@ -1429,13 +1453,14 @@ step
     .turnin 827 >>Turn in Skull Rock
     .accept 829 >>Accept Neeru Fireblade
 step << Shaman
-    .goto Durotar,52.8,28.7,20 >> Go into the cave here
+    .goto Durotar,56.6,26.6,60,0
+    .goto Durotar,52.8,28.7,20 >> Go into the cave here above the harpy ravine
 step << Shaman
     >>Kill the Burning Blade Cultists for the Pouch
 .goto Durotar,52.5,26.7
     .complete 1525,2 --Reagent Pouch (1)
 step << Shaman
-    .goto Durotar,52.8,28.7,20 >> Leave the cave
+    .goto Durotar,52.8,28.7,20 >> Leave the cave then drop down to the harpies
 step
     .goto Durotar,54.0,27.7,30,0
     .goto Durotar,51.3,23.5,30,0
@@ -1453,6 +1478,7 @@ step
     .turnin 835 >>Turn in Securing the Lines
 step
     .goto Orgrimmar,31.8,37.8
+    >> Head to Thrall's Room in Orgrimmar
     .turnin 5726 >>Turn in Hidden Enemies
 step
     .goto Orgrimmar,47.0,53.4
@@ -1464,6 +1490,7 @@ step
     .turnin 832 >>Turn in Burning Shadows
 step
     .goto Durotar,41.6,18.7
+    .accept 812 >> Accept Need for a Cure
     .turnin 812 >>Turn in Need for a Cure
 step
     .goto Durotar,43.1,30.3
