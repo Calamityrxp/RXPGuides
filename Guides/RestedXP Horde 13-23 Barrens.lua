@@ -101,10 +101,12 @@ step << Orc/Troll
     .goto The Barrens,52.6,29.9
     .turnin 6386 >>Turn in Return to the Crossroads.
 step
-    >>Top of the tower
 .goto The Barrens,51.5,30.9
     .turnin 871 >>Turn in Disrupt the Attacks
     .accept 872 >>Accept The Disruption Ends
+step
+       >>Top of the tower
+    .goto The Barrens,51.5,30.9
     .accept 867 >>Accept Harpy Raiders
 step
     .goto The Barrens,52.2,31.0
@@ -116,14 +118,11 @@ step << Tauren Shaman
 step
      #sticky
     #completewith next
->> Check if Lizzarik (Goblin) is in Crossroads, if he is, and you have enough money, buy pots and Heavy Spiked Mace.
+    .vendor >> Check if Lizzarik (Goblin) is in Crossroads, if he is, and you have enough money, buy pots and Heavy Spiked Mace.
+    .unitscan Lizzarik
     .goto The Barrens,52.5,30.7,10,0
 step
-    #sticky
-    #completewith next
-.collect 4778,1 --Collect Heavy Spiked Mace
-step
-    .goto The Barrens,57.1,25.3,250 >> Run to here
+    .goto The Barrens,57.1,25.3,250 >> Run to here, grinding en route
 step
     #sticky
     #completewith Crates
@@ -168,7 +167,7 @@ step
     >>Kill any Zhevras you see. Loot them for Hooves
     .complete 845,1 --Zhevra Hooves (4)
 step << Tauren Warrior
-    .goto The Barrens,56.7,19.8,60 >> Run to here
+    .goto The Barrens,56.7,19.8,60 >> Run to here, grinding en route
 step << !Tauren
     .goto The Barrens,62.3,20.1
     .turnin 924 >>Turn in The Demon Seed
@@ -177,7 +176,7 @@ step << Shaman
     .turnin 1525 >>Turn in Call of Fire
     .accept 1526 >>Accept Call of Fire
 step << Shaman
-    >>Run to the top of the mountain. Click the Brazier
+    .use 6636 >>Run to the top of the mountain. Use the Fire Sapta to see and kill fire elementals. Loot them then click the Brazier
 .goto Durotar,39.0,58.2
     .complete 1526,1 --Glowing Ember (1)
 step << Shaman
@@ -202,7 +201,7 @@ step
     .goto The Barrens,63.9,35.8
     .complete 845,1 --Zhevra Hooves (4)
 step
-    >>Top floor of the building
+    >>Head south to Ratchet grinding en route. Top floor of the building
 .goto The Barrens,62.7,36.3
     .accept 887 >>Accept Southsea Freebooters
 step
@@ -226,7 +225,14 @@ step
     .turnin 819 >>Turn in Chen's Empty Keg
     .accept 821 >>Accept Chen's Empty Keg
 step
+    #completewith next
+    .goto The Barrens,62.1,39.4
     .home >>Set your Hearthstone to Ratchet
+step
+    .goto The Barrens,61.2,39.4
+    >> The level 5 fish food here is super cheap, stock up << Warrior/Rogue
+    .vendor >> Restock on food/water
+    
 step
     #sticky
     #completewith next
@@ -276,15 +282,15 @@ step
     .goto The Barrens,62.7,36.3
     .turnin 892 >>Turn in The Missing Shipment
     .accept 888 >>Accept Stolen Booty
-step
+step << Warrior/Shaman/Paladin
     #sticky
     #completewith next
 .goto The Barrens,61.6,37.9,30,0
+    .unitscan Lizzarik
     .goto The Barrens,52.5,30.7,150 >> Walk via the road to Crossroads, look out for Lizzarik to buy a Heavy Spiked Mace. If he doesn't have it, fly/run to Crossroads instead and Turn in Supplies for the Crossroads
-step
-    #sticky
-    #completewith next
-.collect 4778,1 --Collect Heavy Spiked Mace
+step << !Warrior !Shaman !Paladin
+    .goto The Barrens,63.1,37.2
+    .fly Crossroads >>Fly to Crossroads
 step
     .goto The Barrens,51.5,30.8
     .turnin 5041 >>Turn in Supplies for the Crossroads
@@ -306,13 +312,13 @@ step
     .goto The Barrens,45.4,28.4
     .accept 850 >>Accept Kolkar Leaders
 step
->>Kill Kodobane. Loot him for his head
+>>Kill Kodobane. Loot him for his head. Grind en route.
 .goto The Barrens,42.8,23.5
     .complete 850,1 --Kodobane's Head (1)
 step
     #sticky
     #completewith Claws
-    >>Kill Raptors that you see. Loot them for some Raptor Heads - you'll get more later
+    >>Kill Raptors that you see. Loot them for some Raptor Heads - don't worry about finishing you'll get more later
     .complete 869,1 --Raptor Head (12)
 step
     #sticky
@@ -380,6 +386,10 @@ step
     .goto The Barrens,52.4,11.6
     .turnin 901 >>Turn in Samophlange
     .accept 902 >>Accept Samophlange
+step << Druid
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer 12042 >> Train spells
 step
     #completewith next
     .hs >>Hearth to Ratchet
@@ -430,16 +440,16 @@ step
     >>Kill Savannah Prowlers in the area. Loot them for their Tusks
     .complete 821,1 --Savannah Lion Tusk (5)
 step
-    >>Use the Horn of Echeyakee in your bags to summon Echeyakee. Kill him and loot him for his Hide
+    .use 10327 >>Use the Horn of Echeyakee in your bags to summon Echeyakee. Kill him and loot him for his Hide
 .goto The Barrens,55.5,17.3
     .complete 881,1 --Echeyakee's Hide (1)
 step
     #sticky
     #completewith Slugs
->>Loot the buckets on the ground in the area
+>>Loot the buckets on the ground in the area, grinding en between them
     .complete 3922,1 --Nugget Slug (15)
 step
-    >>Accept Ignition from the Shredder
+    >>Accept Ignition from the Shredder. If someone recently started the escort you'll need to wait for him to respawn.
 .goto The Barrens,56.5,7.5
     .accept 858 >>Accept Ignition
 step
@@ -453,7 +463,7 @@ step
     .accept 863 >>Accept The Escape
 step
     #label Slugs
->>2 Mobs will spawn at some point. Kill them then wait for his RP event at the end
+>>2 Mobs will spawn at some point. Kill them then wait for his roleplay event at the end. The roleplay takes roughly 20 seconds.
 .goto The Barrens,55.3,7.8
     .complete 863,1 --Escort Wizzlecrank out of the Venture Co. drill site (1)
 step
@@ -528,12 +538,13 @@ step
 .goto The Barrens,62.6,49.6
     .complete 888,1 --Shipment of Boots (1)
 step
-.goto The Barrens,57.4,52.4,30 >>Run to the Raptor Grounds
+.goto The Barrens,57.4,52.4,30 >>Grind towards the Raptor Grounds
 step
     #sticky
     #completewith Nest
->>Kill any raptors you see. Loot them for their Horns and Feathers. Be careful as they thrash
+>>Kill any raptors you see. Loot them for their Horns and Feathers. Be careful as they thrash. You need 3 feathers before leaving
     .complete 865,1 --Intact Raptor Horn (5)
+    .collect 5165,3 --Sunscale Feather (3)
 step
 >>Loot the chest for Stolen Silver
 .goto The Barrens,58.0,53.9
@@ -571,12 +582,16 @@ step
 >>Kill Plainstriders in the area. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    >>Talk to Mankrik's Wife
+    >>Talk to Mankrik's Wife, grind en route to her
 .goto The Barrens,49.3,50.4
+    .skipgossip
     .complete 4921,1 --Find Mankrik's Wife (1)
 step
     .goto The Barrens,45.6,59.0
     .home >>Set your Hearthstone to Camp Taurajo
+step
+    .goto The Barrens,45.6,59.0
+    .vendor >> Restock on food/water tough questing segment ahead
 step
     .goto The Barrens,44.5,59.2
     .accept 878 >>Accept Tribes at War
@@ -657,6 +672,8 @@ step
 step
 #sticky
 #label deepmossegg
+    #completewith eggend
+    .goto Stonetalon Mountains,62.8,59.8,80
     >>Click the spider eggs near the trees. Make sure you're at full health each time you open the eggs as they may spawn difficult/multiple mobs
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
@@ -705,10 +722,15 @@ step
     .goto Stonetalon Mountains,59.0,62.6
     .turnin 1093 >> Turn in Super Reaper 6000
     .accept 1094 >> Accept Further Instructions
+step << Druid
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer 12042 >> Train spells
 step
 #requires deepmossegg
     .hs >> Hearth to Camp Taurajo
 step
+    #label eggend
     .goto The Barrens,44.9,59.1
     .turnin 3261 >>Turn in Jorn Skyseer
     .accept 882 >>Accept Ishamuhale
@@ -718,30 +740,32 @@ step
     >>Kill Stormstouts. Loot them for a Horn
     .complete 821,3 --Thunder Lizard Horn (1)
 step
-#sticky
-#label Lakota1
-#completewith next
-.goto The Barrens,50.0,53.1,0
+    #sticky
+    #label Lakota1
+    #completewith next
+    .goto The Barrens,50.0,53.1,0
     .goto The Barrens,46.0,49.2,0
     .goto The Barrens,45.3,52.5,0
     .goto The Barrens,45.0,51.8,0
->>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him, skip this quest.
-.collect 5099,1,883 --Collect Hoof of Lakota'Mani
-.accept 883 >>Accept Lakota'Mani
+    .use 5099 >>Find & kill Lakota'mani (Gray Kodo) around the area. Loot his Hoof. If you can't find him or if he is too difficult, skip this quest.
+    .unitscan Lakota'mani
+    .collect 5099,1,883 --Collect Hoof of Lakota'Mani
+    .accept 883 >>Accept Lakota'Mani
 step
-    >>Kill a LOT of Quillboars. Loot them for their tusks. Save the Blood Shards you get
-.goto The Barrens,44.3,52.3,50,0
+    >>Kill a LOT of Quillboars. Prioritize Thornweavers, Water Seekers, and Geomancers where you can. Loot them for their tusks. Save the Blood Shards you get
+    *Water Seekers only spawn in the south western most camps. Go East or North West for Geomancers / Thornweavers.
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
     .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
     .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
     .goto The Barrens,45.2,54.3,50,0
-.goto The Barrens,44.3,52.3,50,0
+    .goto The Barrens,44.3,52.3,50,0
     .goto The Barrens,47.1,53.3,50,0
-    .goto The Barrens,45.2,54.3,50,0
+    .goto The Barrens,45.2,54.3
 .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
@@ -756,7 +780,7 @@ step
 .goto The Barrens,61.0,32.2
 .collect 10338,1 --Collect Fresh Zhevra Carcass
 step
-    >>Use the Fresh Zhevra Carcass at the dead tree to summon Ishamuhale. Kill and loot him for his Fang
+    .use 10338 >>Use the Fresh Zhevra Carcass at the dead tree to summon Ishamuhale. Kill and loot him for his Fang
 .goto The Barrens,59.9,30.4
     .complete 882,1 --Ishamuhale's Fang (1)
 step
@@ -772,6 +796,9 @@ step
     .turnin 865 >>Turn in Raptor Horns
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
     .accept 1491 >>Accept Smart Drinks
+step
+    #completewith next
+    .destroy 5570 >> You can destroy any leftover Deepmoss Spider Eggs now
 step
     .goto The Barrens,62.3,38.4
     .turnin 821 >>Turn in Chen's Empty Keg
@@ -796,7 +823,6 @@ step
     .goto The Barrens,52.2,31.9
     .turnin 880 >>Turn in Altered Beings
     .accept 1489 >>Accept Hamuul Runetotem
-    .accept 3301 >>Accept Mura Runetotem
 step
     .goto The Barrens,51.5,30.3
     .fly Camp Taurajo >>Fly to Camp Taurajo
@@ -811,7 +837,9 @@ step
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
 step
 #completewith BloodShard
-+Use your Blood Shards on any buff from Mangletooth
+    >> Use your Blood Shards on Spirit of the Wind if you have enough
+    .accept 889 >> Accept Spirit of the Wind
+    .turnin 889 >> Turn in Spirit of the Wind
 step
     .isOnQuest 883
 .goto The Barrens,44.8,59.1
@@ -835,6 +863,7 @@ step
 .goto The Barrens,49.2,62.6,0
 .goto The Barrens,49.6,60.0,0
 >>Search for Owatanka (Blue Thunder Lizard) around this area. If you find him, loot his Tailspike and start the quest. If you can't find him, skip this quest
+    .unitscan Owatanka
 .collect 5102,1,884 --Collect Owatanka's Tailspike
 .accept 884 >>Accept Owatanka
 step
@@ -870,7 +899,7 @@ step
 step << Shaman/Warrior
     #sticky
     #completewith next
-    +If it's cheaper, buy a green 2h mace from the AH
+    +If it's cheaper, buy a green 2h mace from the AH. Skip this step if you will run Wailing Caverns, the quest staff is much better.
 step << Shaman/Warrior
     .goto Thunder Bluff,53.2,58.2
     .vendor >> Go buy Maul
@@ -884,15 +913,16 @@ step
     .accept 1195 >>Accept The Sacred Flame
 step
     .goto Thunder Bluff,22.8,20.9
+    >> Go into the Pools of Vision below the Spirit Rise
     .accept 962 >>Accept Serpentbloom
-step
-    .goto Thunder Bluff,30.1,30.0,15 >>Go into The Pools of Vision
 step
     .goto Thunder Bluff,28.4,27.7
     .accept 264 >>Accept Until Death Do Us Part
 step << Shaman
     .goto Thunder Bluff,25.1,20.6
     .accept 1529 >>Accept Call of Water
+step << Shaman
+    .goto Thunder Bluff,23.6,19.1
     .train 2645 >>Train Ghost Wolf
 .train 8004 >>Train Lesser Healing Wave
 .train 6363 >>Train Searing Totem r2
@@ -930,7 +960,7 @@ step
 step
 #sticky
 #label Serpentbloom
->>Look for green and red flowers on the ground
+>>Look for green and red flowers on the ground. Herbalists can track them on the minimap.
 .complete 962,1 --Serpentbloom (10)
 step
 .goto Kalimdor,52.0,55.4,20,0
@@ -968,6 +998,8 @@ step
     .goto Kalimdor,52.6,54.5,30,0
 .goto Kalimdor,52.6,54.5
 >>Kill Ectoplasms for Wailing Essences. Keep an eye out for the 2 rares in the deeper part of the cave (Trigore and Boahn), as they can drop blue BoE items
+    .unitscan Boahn
+    .unitscan Trigore the Lasher
 .complete 1491,1 --Wailing Essence (6)
 step
 #requires Serpentbloom
@@ -995,13 +1027,15 @@ step
     .goto Stonetalon Mountains,71.3,95.1
     .turnin 6461 >>Turn in Blood Feeders
 step
+    .goto Stonetalon Mountains,49.0,62.8,40,0
     .goto Stonetalon Mountains,47.3,64.2
+    >> Head up the side mountain path
     .accept 6562 >>Accept Trouble in the Deeps
 step
     .goto Stonetalon Mountains,47.2,61.1
     .turnin 6284 >>Turn in Arachnophobia
 step
-    .goto Stonetalon Mountains,45.0,77.0
+    .goto Stonetalon Mountains,41.0,59.9
     .fp Sun Rock>> Get the Sun Rock Retreat flight path
 step
     .goto Stonetalon Mountains,47.5,58.4
@@ -1032,7 +1066,6 @@ step
     .goto Ashenvale,11.7,34.9
     .accept 6462 >>Accept Troll Charm
     .accept 6442 >>Accept Naga at the Zoram Strand
-    .accept 6563 >> Accept The Essence of Aku'Mai
 step
     >>Accepting this quest starts an escort. Follow him
 .goto Ashenvale,12.1,34.4
@@ -1052,6 +1085,7 @@ step
 step
     #sticky
     #label Sapphires
+    #completewith zoramend
 .goto Ashenvale,13.0,13.2,30,0
 .goto Ashenvale,13.6,9.0,30,0
 .goto Ashenvale,13.0,13.2,30,0
@@ -1060,11 +1094,23 @@ step
 .goto Ashenvale,13.6,9.0,30,0
 .goto Ashenvale,13.0,13.2,30,0
 .goto Ashenvale,13.6,9.0,30,0
-        >>Swim under the water, and enter Blackfathom Deeps. Grind mobs until a Damp Note drops, and loot the Sapphires from the walls in the tunnel.
+        >>Swim under the water, and enter Blackfathom Deeps. Grind mobs until a Damp Note drops, then right click it and accept the quest.
 .collect 16790,1,6564 --Collect Damp Note
     .accept 6564 >> Accept Allegiance to the Old Gods
-    .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
 step
+    #requires Sapphires
+   Loot the Sapphires from the walls in the tunnel.
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+    .goto Ashenvale,13.0,13.2,30,0
+    .goto Ashenvale,13.6,9.0,30,0
+        .complete 6563,1 --Collect Sapphire of Aku'Mai (x20)
+step
+    #label zoramend
 #requires wrathtailhead
 >>Return to Zoram'gar Outpost.
     .goto Ashenvale,12.2,34.2
@@ -1076,14 +1122,20 @@ step
 step
     .goto Ashenvale,11.7,34.9
     .turnin 6442 >>Turn in Naga at the Zoram Strand
+step << Druid
+    >>Teleport to Moonglade
+    .goto Moonglade,52.4,40.6
+    .trainer 12042 >> Train spells
+step
+    #completewith next
+    .goto Ashenvale,12.2,33.8
+    .hs > Hearth or fly to Thunder Bluff
 step
     .goto Thunder Bluff,70.1,30.9
     .turnin 1063 >>Turn in The Elder Crone
 step
     .goto Thunder Bluff,78.4,28.8
     .turnin 1489 >>Turn in Hamuul Runetotem
-step
-    .goto Thunder Bluff,78.1,29.3
     .accept 1490 >>Accept Nara Wildmane
 step
     .goto Thunder Bluff,75.7,31.3
@@ -1093,11 +1145,12 @@ step
     .accept 1064 >>Accept Forsaken Aid
 step
     .goto Thunder Bluff,22.8,20.9
+    >> Head to the Pools of Vision below Spirit Rise
     .turnin 1064 >>Turn in Forsaken Aid
     .accept 1065 >>Accept Journey to Tarren Mill
     .turnin 962 >>Turn in Serpentbloom
 step
-    .goto The Barrens,51.5,30.4
+    .goto Thunder Bluff,46.9,49.9
     .fly Ratchet >>Fly to Ratchet
 step
     .goto The Barrens,63.1,37.6
@@ -1115,6 +1168,7 @@ step << Shaman
     .goto The Barrens,63.1,37.1
     .fly Camp Taurajo >>Fly to Camp Taurajo
 step << Shaman
+    #completewith next
     .goto The Barrens,45.6,59.0
     .home >>Set your Hearthstone to Camp Taurajo
 step << Shaman
